@@ -13,13 +13,18 @@ import { isValidId } from '../middlewares/isValidId.js';
 const artCatalogRouter = Router();
 artCatalogRouter.get(
   '/catalog',
-  isValidId,
+
   ctrlWrapper(getArtCatalogController),
 );
 
-artCatalogRouter.get('/catalog/:id', ctrlWrapper(getArtCatalogByIdController));
+artCatalogRouter.get(
+  '/catalog/:id',
+  isValidId,
+  ctrlWrapper(getArtCatalogByIdController),
+);
 artCatalogRouter.post(
   '/catalog',
+
   validateBody(createArtCaralogShema),
   ctrlWrapper(createArtCatalogController),
 );
