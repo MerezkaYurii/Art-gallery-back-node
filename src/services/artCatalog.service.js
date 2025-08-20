@@ -4,7 +4,7 @@ import { SORT_ORDER } from '../constants/index.js';
 
 export const getArtCatalog = async ({
   page = 1,
-  perPage = 9,
+  perPage = 8,
   sortOrder = SORT_ORDER.ASC,
   sortBy = 'createdAt',
 }) => {
