@@ -5,9 +5,11 @@ import { SORT_ORDER } from '../constants/index.js';
 export const getArtCatalog = async ({
   page = 1,
   perPage = 8,
-  sortOrder = SORT_ORDER.ASC,
+  sortOrder = SORT_ORDER.DESC,
   sortBy = 'createdAt',
 }) => {
+console.log('Sorting by:', sortBy, '| order:', sortOrder);
+
   const limit = perPage;
   const skip = (page - 1) * perPage;
 
